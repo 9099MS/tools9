@@ -1,7 +1,5 @@
 // calculateAge 함수를 전역으로 선언하여 HTML의 onclick에서도 접근 가능하게 합니다.
 function calculateAge() {
-    console.log("calculateAge 함수가 호출되었습니다.");
-
     const birthdateInput = document.getElementById('birthdate');
     const resultDiv = document.getElementById('result');
     let errorMessageDiv = birthdateInput.parentNode.querySelector('.error-message');
@@ -111,7 +109,6 @@ function calculateAge() {
   </div>
 `;
 
-
     // 툴팁 이벤트 리스너 추가
     document.querySelectorAll('.info-icon').forEach(icon => {
         icon.addEventListener('click', function() {
@@ -126,8 +123,6 @@ function calculateAge() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded 이벤트 발생, 스크립트 초기화 시작.");
-
     const birthdateInput = document.getElementById('birthdate');
     const calculateButton = document.getElementById('calculateBtn'); 
     
@@ -171,13 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else {
-        console.error("오류: 'birthdate' ID를 가진 입력 필드를 찾을 수 없습니다.");
+        // console.error("오류: 'birthdate' ID를 가진 입력 필드를 찾을 수 없습니다.");
     }
 
     if (calculateButton) {
         calculateButton.addEventListener('click', calculateAge);
-        console.log("버튼 클릭 이벤트 리스너가 추가되었습니다.");
     } else {
-        console.error("오류: 'calculateBtn' ID를 가진 버튼을 찾을 수 없습니다.");
+        // console.error("오류: 'calculateBtn' ID를 가진 버튼을 찾을 수 없습니다.");
     }
 });
