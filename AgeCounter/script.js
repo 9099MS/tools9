@@ -6,15 +6,15 @@ function calculateAge() {
     if (!errorMessageDiv) {
         errorMessageDiv = document.createElement('div');
         errorMessageDiv.className = 'error-message';
-        // Insert it after the input but before the button for better visual flow
-        birthdateInput.parentNode.insertBefore(errorMessageDiv, document.getElementById('calculateBtn'));
+        // errorMessageDiv를 birthdateInput 바로 뒤에 삽입
+        birthdateInput.after(errorMessageDiv);
     }
 
     const showError = (message) => {
         errorMessageDiv.textContent = message;
         errorMessageDiv.style.color = '#dc3545';
         errorMessageDiv.style.fontSize = '0.9rem';
-        errorMessageDiv.style.marginTop = '10px'; /* Adjusted for better spacing */
+        errorMessageDiv.style.marginTop = '10px';
         errorMessageDiv.style.marginBottom = '20px';
     };
 
@@ -29,7 +29,7 @@ function calculateAge() {
     const birthdate = birthdateInput.value;
 
     if (!birthdate || birthdate.length !== 8 || !/^\d{8}$/.test(birthdate)) {
-        showError("생년월일을 YYYYMMDD 형식으로 정확히 입력하세요! (예: 20010131)");
+        showError("생년월일을YYYYMMDD 형식으로 정확히 입력하세요! (예: 20010131)");
         return;
     }
 
@@ -123,19 +123,15 @@ function calculateAge() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded 이벤트 발생, 스크립트 초기화 시작."); // 이 메시지가 뜨는지 확인
-        
     const birthdateInput = document.getElementById('birthdate');
     const calculateButton = document.getElementById('calculateBtn'); 
     
     if (birthdateInput) {
-        // Ensure error message div exists before attaching listeners
-        console.log("'birthdate' 입력 필드 찾음."); // 이 메시지가 뜨는지 확인
         let errorMessageDiv = birthdateInput.parentNode.querySelector('.error-message');
         if (!errorMessageDiv) {
             errorMessageDiv = document.createElement('div');
             errorMessageDiv.className = 'error-message';
-            birthdateInput.parentNode.insertBefore(errorMessageDiv, document.getElementById('calculateBtn'));
+            birthdateInput.after(errorMessageDiv); // 수정된 부분
         }
 
         const showError = (message) => {
@@ -168,15 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 calculateAge();
             }
         });
-    } else {
-        // console.error("오류: 'birthdate' ID를 가진 입력 필드를 찾을 수 없습니다.");
     }
 
     if (calculateButton) {
-        console.log("'calculateBtn' 버튼 찾음."); // 이 메시지가 뜨는지 확인
         calculateButton.addEventListener('click', calculateAge);
-        console.log("버튼 클릭 이벤트 리스너가 추가되었습니다."); // 이 메시지가 뜨는지 확인
-    } else {
-         console.error("오류: 'calculateBtn' ID를 가진 버튼을 찾을 수 없습니다.");
     }
 });
