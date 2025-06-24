@@ -123,11 +123,14 @@ function calculateAge() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded 이벤트 발생, 스크립트 초기화 시작."); // 이 메시지가 뜨는지 확인
+        
     const birthdateInput = document.getElementById('birthdate');
     const calculateButton = document.getElementById('calculateBtn'); 
     
     if (birthdateInput) {
         // Ensure error message div exists before attaching listeners
+        console.log("'birthdate' 입력 필드 찾음."); // 이 메시지가 뜨는지 확인
         let errorMessageDiv = birthdateInput.parentNode.querySelector('.error-message');
         if (!errorMessageDiv) {
             errorMessageDiv = document.createElement('div');
@@ -170,8 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (calculateButton) {
+        console.log("'calculateBtn' 버튼 찾음."); // 이 메시지가 뜨는지 확인
         calculateButton.addEventListener('click', calculateAge);
+        console.log("버튼 클릭 이벤트 리스너가 추가되었습니다."); // 이 메시지가 뜨는지 확인
     } else {
-        // console.error("오류: 'calculateBtn' ID를 가진 버튼을 찾을 수 없습니다.");
+         console.error("오류: 'calculateBtn' ID를 가진 버튼을 찾을 수 없습니다.");
     }
 });
