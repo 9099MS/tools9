@@ -24,6 +24,13 @@
     }
 }
 
+/* 인라인 스타일에 있던 내용 추가 */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
     font-family: var(--font-family);
     margin: 0;
@@ -36,6 +43,21 @@ body {
     color: var(--text-color);
     box-sizing: border-box;
     transition: background-color 0.3s ease, color 0.3s ease; /* 다크 모드 전환 부드럽게 */
+}
+
+.page-wrapper { /* 인라인 스타일에 있던 내용 추가 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-row { /* 인라인 스타일에 있던 내용 추가 */
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 30px;
 }
 
 .container {
@@ -198,7 +220,8 @@ tr:last-child td {
 }
 
 /* 추가된/수정된 부분 설명을 위해 여기에 다시 표시합니다. */
-.main-content {
+.main-content { /* 인라인 스타일에 있던 내용 추가 */
+    flex: 1; /* 이 부분이 빠져있어서 추가 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,4 +326,43 @@ tr:last-child td {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* 인라인 스타일에 있던 광고 컨테이너 스타일 추가 */
+.ad-container {
+  width: 200px;
+  min-height: 400px;
+  background-color: transparent;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .layout-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ad-container {
+    width: 100%;
+    min-height: 100px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #64748b;
+  background-color: #f9fafb;
+}
+
+footer a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
