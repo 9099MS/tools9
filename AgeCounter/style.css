@@ -1,0 +1,306 @@
+/* CSS 변수 정의 */
+:root {
+    --primary-color: #4CAF50; /* 따뜻한 그린 계열 */
+    --primary-dark-color: #388E3C;
+    --secondary-color: #FFC107; /* 강조색 */
+    --text-color: #333;
+    --background-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e0e0e0;
+        --background-color: #2c2c2c;
+        --container-bg: #3c3c3c;
+        --border-color: #555;
+        --shadow-light: rgba(0, 0, 0, 0.2);
+        --shadow-medium: rgba(0, 0, 0, 0.3);
+    }
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 다크 모드 전환 부드럽게 */
+}
+
+.container {
+    background-color: var(--container-bg);
+    border-radius: 16px; /* 더 둥글게 */
+    box-shadow: 0 8px 25px var(--shadow-medium); /* 그림자 강화 */
+    padding: 30px 40px; /* 패딩 조정 */
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+    font-size: 2.8rem; /* 폰트 크기 키움 */
+    color: var(--primary-color); /* 메인 색상 적용 */
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 14px; /* 패딩 키움 */
+    margin-bottom: 30px;
+    border-radius: 10px; /* 더 둥글게 */
+    border: 1px solid var(--border-color);
+    font-size: 1.2rem; /* 폰트 크기 키움 */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color); /* 입력 텍스트 색상 */
+    background-color: var(--container-bg); /* 배경 색상 */
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25); /* primary-color 기반 그림자 */
+    outline: none;
+}
+
+button {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-dark-color)); /* 그라디언트 버튼 */
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px; /* 더 둥글게 */
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem; /* 폰트 크기 키움 */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9; /* 살짝 투명도 변화 */
+}
+
+#result table {
+    border-radius: 12px; /* 테이블도 둥글게 */
+    box-shadow: 0 4px 10px var(--shadow-light); /* 그림자 추가 */
+}
+
+th, td {
+    padding: 18px; /* 패딩 키움 */
+    font-size: 1.1rem; /* 폰트 크기 조정 */
+}
+
+th {
+    background-color: var(--primary-color); /* 테이블 헤더에 메인 색상 */
+    color: white; /* 글자색 흰색 */
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* 광고 컨테이너 스타일 */
+.ad-container {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    border: 1px dashed #adb5bd;
+    order: 2; /* 기본적으로 콘텐츠 사이에 오도록 */
+}
+
+/* 반응형 디자인: 화면 너비가 768px 이상일 때 */
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex: 1;
+        max-width: 550px; /* 이 부분을 400px에서 550px로 변경했습니다. */
+        margin-right: 20px;
+        order: 1;
+    }
+
+    .usage-text {
+        flex-basis: 100%; /* 가로 정렬 시에도 한 줄 차지하도록 */
+        order: 3; /* 광고 뒤에 오도록 순서 조정 */
+        margin-top: 0; /* 데스크톱에서 상단 마진 초기화 */
+        margin-bottom: 20px; /* 아래 마진 조정 */
+    }
+
+    .ad-container {
+        width: auto;
+        flex-grow: 1;
+        min-height: 250px;
+        margin: 0;
+        order: 2;
+    }
+
+    body {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px;
+        gap: 30px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        max-width: 700px; /* 이 부분을 500px에서 700px로 변경했습니다. */
+        gap: 30px;
+        order: 2;
+    }
+
+    #ad-top, #ad-bottom {
+        order: initial;
+        flex: none;
+    }
+
+    #ad-top {
+        margin-right: 30px;
+        max-width: 200px;
+        min-height: 400px;
+        order: 1;
+    }
+
+    #ad-bottom {
+        margin-left: 30px;
+        max-width: 200px;
+        min-height: 400px;
+        order: 3;
+    }
+}
+
+/* 추가된/수정된 부분 설명을 위해 여기에 다시 표시합니다. */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px; /* 이 부분을 800px에서 1000px로 변경했습니다. */
+    gap: 20px;
+}
+.age-result-box {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.age-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.age-result-table th {
+  background-color: #f9fafb;
+  text-align: left;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.age-result-table td {
+  background-color: #fff;
+  padding: 14px 20px;
+  color: #4CAF50;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.age-result-table tr:last-child td,
+.age-result-table tr:last-child th {
+  border-bottom: none;
+}
+
+/* Info Icon Styling */
+.info-icon {
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 0.9em;
+    color: #6c757d;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.info-icon:hover {
+    background-color: #ced4da;
+    color: #333;
+}
+
+/* Result Header Styling */
+.result-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.result-header h3 {
+    font-size: 1.3rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: -20px; /* Adjust as needed to position correctly */
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 600px; /* Align with result box or container */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
