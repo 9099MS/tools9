@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상황별 이모지 가이드</title>
+    <title>상황별 이모지 가이드 - 감정별 이모지 쉽게 찾고 복사하기</title>
+    <meta name="description" content="다양한 감정과 상황에 맞는 이모지를 한눈에 확인하고 간편하게 복사하세요. SNS, 채팅, 콘텐츠 제작에 유용한 상황별 이모지 가이드!">
+    <meta name="keywords" content="이모지, 상황별 이모지, 감정 이모지, 이모지 복사, 이모지 검색, 이모티콘, 감정 표현, sns 이모지, 카톡 이모지, emoji guide">
+    <meta name="author" content="상황별 이모지 가이드">
+
+    <!-- Open Graph (SNS 공유용) -->
+    <meta property="og:title" content="상황별 이모지 가이드 - 감정에 맞는 이모지를 쉽게 복사하세요!" />
+    <meta property="og:description" content="기쁨, 분노, 슬픔, 당황 등 다양한 상황에 맞춘 이모지를 찾아 복사하고, 감정을 쉽게 표현해보세요." />
+    <meta property="og:image" content="https://pdnote.com/wp-content/uploads/2025/06/emoji_sense.png" />
+    <meta property="og:url" content="https://pdnote.com/emoji_sense" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="상황별 이모지 가이드" />
+    <meta name="twitter:description" content="감정별 이모지를 빠르게 찾고 복사할 수 있는 이모지 가이드 사이트" />
+    <meta name="twitter:image" content="https://yourdomain.com/thumbnail.jpg" />
+
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +36,15 @@
 <body>
    
     <main class="container">
-        
-            <h1 style="text-align: center;">상황별 이모지 가이드</h1>
+        <header>       </header>
+        <div  class="header">  
+           <h1 style="text-align: center;">상황별 이모지 가이드</h1>
            <!-- 1. 설명 문구 수정 -->
            <p style="text-align: center;">이모지 선택하면 복사돼요!</p>
            <p><br><br></p>
+        </div>
 
       
-
         <!-- 2. 카테고리 목차 추가 -->
            <nav class="category-nav">
             <div class="category-nav-grid">

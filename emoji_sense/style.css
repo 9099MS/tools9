@@ -40,11 +40,24 @@ header {
     margin-bottom: 30px; /* 목차와의 간격 조정 */
 }
 
-header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text-color);
+.header h1 {
+            font-size: 2.5rem;
+            color: var(--title-color);
+            margin-bottom: 8px;
+        }
+.header h1 {
+            font-size: 3rem; /* 더 크게 */
+            margin-bottom: 10px;
+            text-align: center;
+            
+            /* 텍스트에 그라디언트 적용 */
+            background: linear-gradient(90deg, #964ce6 0%, #06193a 100%); /* 왼쪽에서 오른쪽으로 보라색에서 파란색 그라디언트 */
+            -webkit-background-clip: text; /* 텍스트 내부에만 배경이 보이도록 */
+            background-clip: text;
+            color: transparent; /* 텍스트 색상을 투명하게 하여 배경이 보이도록 */
+            
+            /* 선택 사항: 텍스트에 부드러운 그림자 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header p {
