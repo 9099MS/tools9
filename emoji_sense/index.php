@@ -38,9 +38,9 @@
     <main class="container">
         <header>       </header>
         <div  class="header">  
-           <h1 style="text-align: center;">상황별 이모지 가이드</h1>
+           <h1 style="text-align: center;">상황별 이모지 모음</h1>
            <!-- 1. 설명 문구 수정 -->
-           <p style="text-align: center;">이모지 선택하면 복사돼요!</p>
+           <p style="text-align: center;">이모지를 클릭해 보세요 🕺</p>
            <p><br><br></p>
         </div>
 
