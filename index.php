@@ -178,10 +178,10 @@
                         </div>
                         <p>3가지 나이(만, 연, 세는)를 계산할 수 있는 심플한 나이계산기</p>
                     </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pdnote.com/TextCounter" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div class="tool-card-header">
                             <div class="tool-icon">🔢</div>
-                            <h3>글자수 세기(준비중)</h3>
+                            <h3>글자수 세기</h3>
                         </div>
                         <p>공백 포함/제외 글자 수를 실시간으로 계산합니다.</p>
                     </a>
@@ -219,10 +219,10 @@
                         </div>
                         <p>글의 맞춤법과 문법 오류를 찾아 수정합니다.</p>
                     </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pdnote.com/TextCounter" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div class="tool-card-header">
                             <div class="tool-icon">🔢</div>
-                            <h3>글자수 세기(준비중)</h3>
+                            <h3>글자수 세기</h3>
                         </div>
                         <p>공백 포함/제외 글자 수를 실시간으로 계산합니다.</p>
                     </a>
@@ -259,14 +259,9 @@
             <!---------------------------------------------------------------------------------->   
             </main>
     </div>
-    <footer style="text-align: center; margin-top: 3rem; font-size: 0.875rem; color: #64748b;">
-    <p>&copy; <span id="currentYear"></span> My Useful Tools / 9099ms@gmail.com / All rights reserved.</p>
-    <p>
-        <a href="https://pdnote.com/mytools/nicetools.html" style="color: #3b82f6; text-decoration: underline;">
-            놓치면 아쉬운 꿀도구 모음👆
-        </a>
-    </p>
-    </footer>
+    <!-- Footer 태그 -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
+
     <script> document.getElementById('currentYear').textContent = new Date().getFullYear(); </script>
 </body>
 </html> 

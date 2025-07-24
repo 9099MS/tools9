@@ -119,12 +119,9 @@
           </section>
         </main>
 
-        <footer class="text-center mt-12 text-sm text-slate-500">
-          <p>&copy; <span id="currentYear"></span> 발표 시간 계산기 9099ms@gmail.com All rights reserved.  </p>
-          <p> <a href="https://pdnote.com/mytools/nicetools.html" class="text-blue-500 hover:underline">
-              놓치면 아쉬운 꿀도구 모음👆</a>
-          </p>
-        </footer>
+        <!-- Footer 태그 -->
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
+
       </div>
     </div>
     <!-- Ad Sidebar -->

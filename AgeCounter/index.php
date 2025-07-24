@@ -50,14 +50,9 @@
 
       
     </div>
-
-    <footer>
-      <p> <span id="currentYear"></span> 만 나이 계산기 | 9099ms@gmail.com | &copy; All rights reserved.</p>
-      <p>
-        <a href="https://pdnote.com/mytools/nicetools.html">놓치면 아쉬운 꿀도구 모음 👆</a>
-      </p>
-    </footer>
-
+ 
+     <!-- Footer 태그 -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
   </div>
 
   <script>
