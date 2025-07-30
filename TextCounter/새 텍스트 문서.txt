@@ -1,0 +1,57 @@
+@_code\LinkMap\ 폴더 안의 파일들을 읽어서 내용을 파악해줘. 그 후에 개선사항을 알려줄께
+
+  3개를 분석하여 SEO에 최적화된 메타태그를 작성하여 파일에 삽입해줘.
+  1)사이트url은 https://pdnote.com/TextCounter
+  2)대표이미지 url은 https://pdnote.com/wp-content/uploads/2025/07/simple_compose.png
+  3)  다음 태그 삽입
+   <!-- 구글 태그 (</head> 태그 전에 삽입) -->
+   <?php include $_SERVER['DOCUMENT_ROOT'] .'/mytools/_template/google.php'; ?>
+
+   <!-- Footer 태그 -->
+   <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
+
+   <!-- 사이드바 태그 (필요시) -->
+   <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/sidebar.php'; ?>
+
+A high-quality, photorealistic image for a blog post titled '자동차 자동세차'. Centered main subject, aesthetically pleasing, with a clean background. No text, no letters, no watermarks
+
+
+ image
+
+A high-quality, a watercolor image for a blog post titled '자동차 자동세차'. Centered main subject, aesthetically pleasing, with a clean background. No text, no letters, no watermarks
+
+
+A high-quality, korea comic catoon style image for a blog post titled '자동차 자동세차'. Centered main subject, aesthetically pleasing, with a clean background. No text, no letters, no watermarks
+
+@blog_automation 폴더 안의 app.py를 터미널에서 실행하면 아무런 반응이 없어. 체크해줘.
+
+
+이곳에 blog_script폴더를 생성해줘. 생성된 폴더에서 다음 프로젝트를 개발할거야.  
+1. 블로그 작성용 제목을 별도의 파일로 관리.  
+2. 사용자가 선택한 시간 스케줄에 따라 제목 1개를 불러와서 블로그 글 작성 준비
+
+3. 작성준비 단계
+  3.1. 블로그 글 제목에 대한  현재일자 기준으로 3일 이내에 발행된 공식 발표자료, 뉴스 및 블로그  등의 자료를 검색하여 내용을 간결하게 정리, 특히 날짜, 수치 및 통계 등은 정확하게 검증할 것. 
+3.2. 정리된 자료는 현재폴더에 1data.md 로 저장
+
+4. 글 작성 단계
+   4.1. 1data.md 로 저장된 파일을 읽어서 사용자가 제공하는 프롬프트에 따라 글을 작성
+   4.2. 프롬프트 파일은 bs_prompt.md 
+   4.3. 최종 작성된 글은 파일로 저장하되 파일이름은 'yyyymmdd+제목 앞 10자까지'로 만들어
+   4.4. 저장이 완료되면 블로그 작성용 제목이 저장된 파일에서 사용한 제목을 다시 처리 하지 않도록 '사용완료' 조치(삭제하지 말것)
+
+5. 메인화면 구성 :  사용자가 선택해야 할 사항(스케줄)과 진행상황을 볼 수 있는 로그 메세지 박스 및 작업 중인 글의 제목 등 필요한 항목들을 배치하여 웹화면으로 제공. 
+- 사이트 제목은 '블로그 원고 작성 봇'
+
+
+작업 절차를 다시 정하자.
+1. 시작 버튼 클릭
+2. 명령어 창(cmd) 열고 다음 3,4,5,6번항목을 순서대로 실행
+3. 'd:' 실행 후 'cd d:/code/blog_script' 실행  
+4. 'gemini' 실행 후 10초 정도 대기하여 명령어 입력 커저가 나타나도록 기다린다.
+5. '@seachprompt.md' 실행
+    seachprompt.md 파일 내용은  기존의 '3. 작성준비단계'를 진행 내용을 프롬프트로 미리 저장 해 놓을 것
+6. '@bs_prompt.md' 실행
+7. 6번까지 정상 완료 후 완료 메세지와 함께 명령어 창을 종료 함
+8. 만약 스케줄 작업으로 진행되는 경우 5 ~6번만 반복하여 진행
+9. 스케줄 작업 진행 시 웹화면에 종료버튼을 추가하고 종료버튼 클릭시  모든작업을 즉시종료하고 명령어 창도 종료한다. 
