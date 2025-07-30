@@ -200,6 +200,13 @@
                 <div class="tool-grid">
                       <a href="https://pdnote.com/emoji" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div  class="tool-card-header">
+                            <div class="tool-icon">⌨️</div>
+                            <h3>이모지 키보드</h3>
+                        </div>
+                        <p>모든 이모지와 특수문자들를 한눈에 확인하고 선택할 수 있습니다.</p>
+                      </a>
+                      <a href="https://pdnote.com/emoji" class="tool-card" target="_blank" rel="noopener noreferrer">
+                        <div  class="tool-card-header">
                             <div class="tool-icon">😊</div>
                             <h3>한눈에 보는 <br>이모지 & 특수문자</h3>
                         </div>
