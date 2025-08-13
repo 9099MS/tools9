@@ -63,11 +63,15 @@
         </div>
         <div id="emoji-keyboard">
             <!-- Emojis will be dynamically added here -->
+        </div> 
+        <div>
+           <!-- Footer 태그 -->
+           <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
         </div>
+        
     </div>
-    <!-- Footer 태그 -->
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
-
+   
+   
     <!-- JavaScript 가져오기 -->
     <script src="https://9099ms.github.io/tools9/emoji_keyboard/script.js"></script> 
 
