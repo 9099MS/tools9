@@ -160,6 +160,28 @@
           <p> 〰️〰️〰️ </p>
         <div>
         <main>
+            <!---------------------------------------------------------------------------------->               
+            <section class="category-section">
+                <h2>📝 성격 테스트</h2>
+                <div class="tool-grid">
+                    
+                    <a href="https://pdnote.com/내로남불/" class="tool-card" target="_blank" rel="noopener noreferrer">
+                        <div class="tool-card-header">
+                            <div class="tool-icon">😤</div>
+                            <h3>내로남불 테스트</h3>
+                        </div>
+                        <p>나는 얼마나 이중잣대를 가지고 있을까?</p>
+                    </a>
+                    <a href="https://pdnote.com/MBTI_quick" class="tool-card" target="_blank" rel="noopener noreferrer">
+                        <div class="tool-card-header">
+                            <div class="tool-icon">😎</div>
+                            <h3>빠른 MBTI 검사</h3>
+                        </div>
+                        <p>간편하고 빠르게 MBTI 유형을 알 수 있어요. .</p>
+                    </a>
+                    </div>
+            </section>
+            <!---------------------------------------------------------------------------------->   
             <!---------------------------------------------------------------------------------->    
             <section class="category-section">
                 <h2>🧮 계산기 모음</h2>
@@ -196,14 +218,14 @@
             </section>
             <!---------------------------------------------------------------------------------->   
             <section class="category-section">
-                <h2>📝 텍스트 도구</h2>
+                <h2>⌨️ 텍스트 도구</h2>
                 <div class="tool-grid">
-                      <a href="https://pdnote.com/emoji" class="tool-card" target="_blank" rel="noopener noreferrer">
+                      <a href="https://pdnote.com/emoji_keyboard" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div  class="tool-card-header">
                             <div class="tool-icon">⌨️</div>
                             <h3>이모지 키보드</h3>
                         </div>
-                        <p>모든 이모지와 특수문자들를 한눈에 확인하고 선택할 수 있습니다.</p>
+                        <p>모든 이모지를 카테고리별로 확인하여 입력할 수 있습니다.</p>
                       </a>
                       <a href="https://pdnote.com/emoji" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div  class="tool-card-header">
@@ -242,28 +264,7 @@
                     </a>
                     </div>
             </section>
-            <!---------------------------------------------------------------------------------->               
-            <section class="category-section">
-                <h2>💻 개발 도구</h2>
-                <div class="tool-grid">
-                    
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
-                        <div class="tool-card-header">
-                            <div class="tool-icon">🎨</div>
-                            <h3>컬러 피커(준비중)</h3>
-                        </div>
-                        <p>원하는 색상의 HEX, RGB 코드를 쉽게 찾습니다.</p>
-                    </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
-                        <div class="tool-card-header">
-                            <div class="tool-icon">📦</div>
-                            <h3>JSON 포맷터(준비중)</h3>
-                        </div>
-                        <p>복잡한 JSON 데이터를 보기 좋게 정렬하고 검증합니다.</p>
-                    </a>
-                    </div>
-            </section>
-            <!---------------------------------------------------------------------------------->   
+            
             </main>
     </div>
     <!-- Footer 태그 -->

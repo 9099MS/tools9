@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 애드센스 코드 --------------------------->
   <!-- Google AdSense Anchor Ad Placeholder -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8111724804339155"  crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3640401342059096"
+     crossorigin="anonymous"></script>
  
   <!-- SEO Meta Tags -->
   <title>발표 시간 계산기 | 스크립트 기반 예상 시간 측정</title>
