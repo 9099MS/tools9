@@ -207,13 +207,7 @@
                         </div>
                         <p>공백 포함/제외 글자 수를 실시간으로 계산합니다.</p>
                     </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
-                        <div class="tool-card-header">
-                            <div class="tool-icon">📋</div>
-                            <h3>랜덤 텍스트 생성기(준비중)</h3>
-                        </div>
-                        <p>디자인 목업을 위한 의미 없는 텍스트를 생성합니다.</p>
-                    </a>
+                    
                     </div>
             </section>
             <!---------------------------------------------------------------------------------->   
@@ -241,13 +235,7 @@
                         </div>
                         <p>모든 이모지와 특수문자들를 한눈에 확인하고 선택할 수 있습니다.</p>
                     </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
-                        <div class="tool-card-header">
-                            <div class="tool-icon">🔄</div>
-                            <h3>맞춤법 검사기(준비중)</h3>
-                        </div>
-                        <p>글의 맞춤법과 문법 오류를 찾아 수정합니다.</p>
-                    </a>
+                   
                     <a href="https://pdnote.com/TextCounter" class="tool-card" target="_blank" rel="noopener noreferrer">
                         <div class="tool-card-header">
                             <div class="tool-icon">🔢</div>
@@ -255,13 +243,7 @@
                         </div>
                         <p>공백 포함/제외 글자 수를 실시간으로 계산합니다.</p>
                     </a>
-                    <a href="#" class="tool-card" target="_blank" rel="noopener noreferrer">
-                        <div class="tool-card-header">
-                            <div class="tool-icon">📋</div>
-                            <h3>랜덤 텍스트 생성기(준비중)</h3>
-                        </div>
-                        <p>디자인 목업을 위한 의미 없는 텍스트를 생성합니다.</p>
-                    </a>
+                    
                     </div>
             </section>
             

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 복사 성공 시
                 // 1. 토스트 메시지 내용 설정
                 toast.innerHTML = `✅ <strong>${emojiToCopy}</strong> 복사 완료!`;
-
+                
                 // 2. 'show' 클래스를 추가하여 토스트 메시지를 화면에 표시
                 toast.classList.add('show');
 
@@ -42,36 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // --- Modal Functionality ---
-    const modal = document.getElementById('example-modal');
-    const btn = document.getElementById('show-examples-btn');
-    const span = document.getElementsByClassName('close-modal')[0];
-
-    // Button might not exist if HTML isn't updated yet, so check
-    if (btn && modal && span) {
-        btn.onclick = function () {
-            modal.style.display = 'flex'; // Use flex to center with our CSS
-            // Slight delay to allow display:flex to apply before adding opacity class for transition
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-        }
-
-        span.onclick = function () {
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300); // Match transition duration
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.classList.remove('show');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300);
-            }
-        }
-    }
 });

@@ -17,7 +17,8 @@
 /* 부드러운 스크롤 효과 */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 20px; /* 헤더에 가려지지 않게 스크롤 위치 조정 */
+    scroll-padding-top: 20px;
+    /* 헤더에 가려지지 않게 스크롤 위치 조정 */
 }
 
 body {
@@ -37,27 +38,33 @@ body {
 /* 헤더 스타일 */
 header {
     text-align: center;
-    margin-bottom: 30px; /* 목차와의 간격 조정 */
+    margin-bottom: 30px;
+    /* 목차와의 간격 조정 */
 }
 
 .header h1 {
-            font-size: 2.5rem;
-            color: var(--title-color);
-            margin-bottom: 8px;
-        }
+    font-size: 2.5rem;
+    color: var(--title-color);
+    margin-bottom: 8px;
+}
+
 .header h1 {
-            font-size: 3rem; /* 더 크게 */
-            margin-bottom: 10px;
-            text-align: center;
-            
-            /* 텍스트에 그라디언트 적용 */
-            background: linear-gradient(90deg, #964ce6 0%, #06193a 100%); /* 왼쪽에서 오른쪽으로 보라색에서 파란색 그라디언트 */
-            -webkit-background-clip: text; /* 텍스트 내부에만 배경이 보이도록 */
-            background-clip: text;
-            color: transparent; /* 텍스트 색상을 투명하게 하여 배경이 보이도록 */
-            
-            /* 선택 사항: 텍스트에 부드러운 그림자 */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 3rem;
+    /* 더 크게 */
+    margin-bottom: 10px;
+    text-align: center;
+
+    /* 텍스트에 그라디언트 적용 */
+    background: linear-gradient(90deg, #964ce6 0%, #06193a 100%);
+    /* 왼쪽에서 오른쪽으로 보라색에서 파란색 그라디언트 */
+    -webkit-background-clip: text;
+    /* 텍스트 내부에만 배경이 보이도록 */
+    background-clip: text;
+    color: transparent;
+    /* 텍스트 색상을 투명하게 하여 배경이 보이도록 */
+
+    /* 선택 사항: 텍스트에 부드러운 그림자 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header p {
@@ -84,7 +91,8 @@ header p {
     background-color: var(--card-background);
     color: var(--primary-color);
     border: 1px solid var(--border-color);
-    border-radius: 25px; /* 동글동글한 버튼 모양 */
+    border-radius: 25px;
+    /* 동글동글한 버튼 모양 */
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
@@ -96,7 +104,7 @@ header p {
     background-color: #e9e7f8;
     transform: translateY(-2px);
     outline: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -136,7 +144,8 @@ header p {
     justify-content: center;
 }
 
-.emoji-card:hover, .emoji-card:focus {
+.emoji-card:hover,
+.emoji-card:focus {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(88, 66, 244, 0.15);
     outline: 2px solid var(--primary-color);
@@ -173,4 +182,149 @@ header p {
 #toast.show {
     visibility: visible;
     opacity: 1;
+}
+
+/* Action Button Style (Text Link Look) */
+.action-button {
+    display: inline-block;
+    background: none;
+    color: #666;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding: 10px;
+    margin: 0 auto 20px;
+    box-shadow: none;
+    transition: color 0.2s;
+}
+
+.action-button:hover {
+    color: var(--primary-color);
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: color 0.2s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Modal Content Styling */
+.modal-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.scenario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.scenario-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.scenario-tag {
+    display: inline-block;
+    background-color: #e8eaf6;
+    color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.example-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.example-row:last-child {
+    margin-bottom: 0;
+}
+
+.example-usage {
+    color: #555;
+    flex: 1;
+}
+
+.example-emoji {
+    font-size: 1.2rem;
+    margin-left: 10px;
 }
