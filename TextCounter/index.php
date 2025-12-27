@@ -284,19 +284,7 @@
         </div> 
     </div>
     <br>
-    <div class="container">
-        <div style="margin: 0 auto;">
-            <!-- 멀티플(수직) -->
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="autorelaxed"
-                data-ad-client="ca-pub-8111724804339155"
-                data-ad-slot="1516609066"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
+    
 
     <script>
         const textInput = document.getElementById('textInput');
@@ -420,8 +408,38 @@
         // 페이지 로드 시 초기 카운트
         updateCount();
     </script>
- 
 
+    <div class="container" id="seo-tips" style="margin-top:30px;">
+        <h2 style="color:#2c3e50; margin-bottom:10px;">✍️ 글쓰기 팁 (SEO 글자수 최적화)</h2>
+        <p style="color:#586069; margin-bottom:12px;">검색 노출을 고려한 글자수 최적화와 가독성 팁입니다. 아래 지침을 바탕으로 목표 글자수를 설정하고 메타 정보를 준비하세요.</p>
+
+        <ol style="color:#444; padding-left:20px;">
+            <li style="margin-bottom:8px;"><strong>목표 길이 설정:</strong> 글의 목적에 따라 목표 글자수를 정하세요. 블로그 심층 분석(정보성)은 1,200~2,000자 권장, 짧은 안내·팁형은 500~800자 권장.</li>
+            <li style="margin-bottom:8px;"><strong>첫 문단에 핵심 키워드 배치:</strong> 주요 키워드를 제목과 첫 문단(문장 1~2개)에 자연스럽게 포함시키면 검색엔진이 페이지 주제를 빠르게 파악합니다.</li>
+            <li style="margin-bottom:8px;"><strong>문단 길이 관리:</strong> 한 문단은 3~4문장(약 50~120자) 이내로 유지해 가독성을 높입니다. 모바일 사용자도 고려하세요.</li>
+            <li style="margin-bottom:8px;"><strong>소제목(H2/H3) 활용:</strong> 글을 H2/H3로 구조화하면 검색 엔진과 사용자 모두 내용을 쉽게 스캔할 수 있습니다. 각 소제목은 관련 키워드를 포함하세요.</li>
+            <li style="margin-bottom:8px;"><strong>메타 설명 작성:</strong> 120~160자 내외의 메타 설명을 작성해 핵심 요약과 클릭 유도 문구(CTA)를 포함하세요. 글자수 카운터로 길이를 맞추면 편합니다.</li>
+            <li style="margin-bottom:8px;"><strong>내부 링크와 외부 레퍼런스:</strong> 관련 내부 페이지로의 링크를 1~3개 포함하고, 신뢰할 수 있는 외부 출처를 필요 시 인용하세요.</li>
+            <li style="margin-bottom:8px;"><strong>문장·단어 다양성:</strong> 동일 키워드 반복을 피하고, 동의어·관련어를 함께 사용해 자연스러운 문장 흐름을 유지하세요.</li>
+            <li style="margin-bottom:8px;"><strong>CTA 및 마무리 문장:</strong> 글의 목적(구독, 다른 글 보기 등)에 맞는 간단한 콜투액션을 마지막에 포함하세요.</li>
+        </ol>
+
+        <p style="color:#6b7280; margin-top:8px;">참고: 이 페이지의 글자수·단어수 결과를 복사해 메타 설명이나 요약 작성에 활용하면 길이 조정이 수월합니다.</p>
+    </div>
+    <br>
+    <div class="container">
+        <div style="margin: 0 auto;">
+            <!-- 멀티플(수직) -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-8111724804339155"
+                data-ad-slot="1516609066"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
     <!-- Footer 태그 -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/footer.php'; ?>
 </body>

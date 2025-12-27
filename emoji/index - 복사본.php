@@ -212,36 +212,6 @@
             margin-bottom: 30px;
         }
     }
-
-    /* Tabs / Accordion (상단 메뉴) */
-    .top-menu { margin: 16px 0 28px; border: 1px solid var(--border-color); border-radius:8px; background:#fff; overflow:hidden; }
-    .tabs { display:flex; gap:8px; padding:8px; background:#f7f7f7; flex-wrap:wrap; }
-    .tab-btn { background:transparent; border:none; padding:10px 14px; cursor:pointer; border-radius:6px; color:var(--text-color); font-weight:600; }
-    .tab-btn[aria-selected="true"]{ background:var(--primary-color); color:#fff; }
-    .tab-panels { padding:16px; }
-    .tab-panel { display:none; }
-    .tab-panel.active{ display:block; }
-
-    @media (max-width:768px){
-        .tabs{ display:block; padding:0; }
-        .tab-btn{ display:flex; justify-content:space-between; width:100%; padding:12px 16px; border-top:1px solid var(--border-color); background:#fff; }
-        .tab-btn:first-child{ border-top:none; }
-        .tab-panel{ display:none; padding:12px 16px; border-top:1px solid var(--border-color); }
-        .tab-panel.active{ display:block; }
-    }
-
-    /* Modal styles */
-    .modal-overlay { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.5); z-index:2000; padding:20px; }
-    .modal-overlay.active{ display:flex; }
-    .modal { background:#fff; border-radius:10px; width:100%; max-width:820px; max-height:80vh; overflow:auto; box-shadow:0 20px 40px rgba(0,0,0,0.3); }
-    .modal-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--border-color); }
-    .modal-title { margin:0; font-size:1.1rem; color:var(--heading-color); }
-    .modal-close { background:transparent; border:0; font-size:1.2rem; cursor:pointer; color:var(--secondary-color); }
-    .modal-body { padding:16px 20px; color:var(--text-color); line-height:1.7; white-space:pre-wrap; }
-
-    .category-links { display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 0; }
-    .category-links a { padding:8px 10px; border-radius:6px; background:#f1f1f1; color:var(--text-color); text-decoration:none; font-weight:600; }
-    .category-links a:hover { background:var(--primary-color); color:#fff; }
     </style>
 
 </head>
@@ -256,38 +226,6 @@
     <main>
    
         <h1>특수문자/이모지(Emoji) 모음</h1>
-        <div class="top-menu" id="top-menu">
-            <div class="tabs" role="tablist" aria-label="상단 메뉴">
-                <button class="tab-btn" role="tab" data-target="categories" aria-selected="true">이모지 카테고리</button>
-                <button class="tab-btn" role="tab" data-target="tips" aria-selected="false">SNS에서 이모지를 활용하는 5가지 팁</button>
-                <button class="tab-btn" role="tab" data-target="origin" aria-selected="false">이모지의 유래</button>
-                <button class="tab-btn" role="tab" data-target="recommend" aria-selected="false">상황별 이모지 추천</button>
-            </div>
-            <div class="tab-panels">
-                <div id="categories" class="tab-panel active" role="tabpanel">
-                    <div class="category-links">
-                        <a href="#emoji-people" data-scroll="#emoji-people">사람 & 신체</a>
-                        <a href="#emoji-animals" data-scroll="#emoji-animals">동물 & 자연</a>
-                        <a href="#emoji-food" data-scroll="#emoji-food">음식</a>
-                        <a href="#emoji-activities" data-scroll="#emoji-activities">운동 & 활동</a>
-                        <a href="#emoji-travel" data-scroll="#emoji-travel">여행 & 장소</a>
-                        <a href="#emoji-objects" data-scroll="#emoji-objects">물건</a>
-                        <a href="#emoji-symbols2" data-scroll="#emoji-symbols2">상징</a>
-                        <a href="#emoji-flags" data-scroll="#emoji-flags">국기</a>
-                        <a href="#emoji-symbols" data-scroll="#emoji-symbols">기호 이모지</a>
-                    </div>
-                </div>
-                <div id="tips" class="tab-panel" role="tabpanel">
-                    <p>간단한 팁: 문장 앞뒤에 이모지를 사용하여 감정을 강조하거나, 해시태그와 함께 사용하면 시선을 끌 수 있습니다.</p>
-                </div>
-                <div id="origin" class="tab-panel" role="tabpanel">
-                    <p>이모지는 1990년대 일본의 휴대폰에서 유래했으며, 이후 전 세계적으로 확산되었습니다.</p>
-                </div>
-                <div id="recommend" class="tab-panel" role="tabpanel">
-                    <p>상황별 추천: 축하(🎉), 위로(🤗), 정보공유(ℹ️) 등 상황에 맞는 이모지를 선택하세요.</p>
-                </div>
-            </div>
-        </div>
   
          <!-- ==================== 이모지 ==================== -->
         <h2>1. 이모지 (Emoji)</h2>
@@ -543,123 +481,6 @@
         });
     } 
 );
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.tab-panel');
-
-    // 긴 설명(모달용) — HTML로 포맷(단락별 줄바꿈 포함)
-    const modalContents = {
-        tips: {
-            title: 'SNS에서 이모지를 활용하는 5가지 팁',
-            body: '<p><strong>1) 핵심 강조:</strong> 한 문장에 한두 개의 이모지로 감정이나 핵심을 강조하세요. 지나치게 많은 이모지는 가독성을 해치니 주의합니다.</p>' +
-                  '<p><strong>2) 맥락 일치:</strong> 이모지는 글의 톤과 맞아야 합니다. 친근한 홍보글엔 밝은 이모지를, 공지나 안내에는 중립적인 기호를 사용하세요.</p>' +
-                  '<p><strong>3) 해시태그와 조합:</strong> 해시태그 앞뒤에 이모지를 넣어 가시성을 높일 수 있습니다. 다만 해시태그 자체에는 이모지를 넣지 않는 것이 검색에 유리합니다.</p>' +
-                  '<p><strong>4) 플랫폼별 렌더링:</strong> 같은 이모지도 플랫폼(안드로이드, iOS, 웹)마다 모양이 달라 의미가 달라질 수 있으니 중요한 메시지에는 텍스트로 보조 설명을 추가하세요.</p>' +
-                  '<p><strong>5) 브랜드 일관성:</strong> 기업 계정은 브랜드 색상이나 톤에 맞는 이모지를 선별해 일관되게 사용하면 인지도를 높일 수 있습니다. 또한 접근성을 위해 이모지 사용 시 대체 텍스트(aria-label)를 고려하세요.</p>'
-        },
-        origin: {
-            title: '이모지의 유래',
-            body: '<p>이모지(emoji)는 1990년대 후반 일본의 휴대전화 환경에서 시작되었고, 당시 NTT 도코모 등 통신사들이 사용자의 감정 표현을 간편하게 하기 위해 작은 그림문자 세트를 제공한 것이 기원입니다.</p>' +
-                  '<p>초기 이모지는 약 176개 정도였으나 스마트폰 보급과 유니코드의 표준화 과정을 통해 전 세계적으로 확산되었습니다. 유니코드는 다양한 문화권의 상징과 감정을 반영하기 위해 지속적으로 새로운 이모지를 채택하고 있으며, 그 결과 표정, 사람, 동물, 음식, 기호, 국기 등 수천 개에 달하는 이모지가 표준에 포함되었습니다.</p>' +
-                  '<p>이 과정에서 각 플랫폼은 자체 디자인을 적용하여 같은 이모지가 서로 다르게 보일 수 있게 되었고, 따라서 커뮤니케이션에서 해석 차이를 줄이려면 텍스트와 병행하는 사용이 권장됩니다.</p>'
-        },
-        recommend: {
-            title: '상황별 이모지 추천',
-            body: '<p><strong>축하:</strong> 성취나 기쁜 소식에는 🎉, 🥳, 🎊 등을 사용하세요. 간단한 칭찬에는 👍, 👏, 🌟와 같은 긍정적 기호가 자연스럽습니다.</p>' +
-                  '<p><strong>위로/공감:</strong> 상대를 위로하거나 공감할 때는 🤗, ❤️, 🤝, 🕊 같은 부드러운 이모지를 골라 진정성을 전달하세요.</p>' +
-                  '<p><strong>공식 안내/정보:</strong> 중요한 공지나 안내문에서는 ℹ️, ✅, ⚠️ 등 정보 전달용 기호를 사용하면 가독성과 이해도를 높입니다.</p>' +
-                  '<p><strong>이벤트/초대:</strong> RSVP나 행사 초대에는 📅, 🕒, 📍, ✉️ 등의 이모지를 사용해 핵심 정보를 시각적으로 보강하세요.</p>' +
-                  '<p><strong>브랜드/마케팅:</strong> 특정 캠페인에서는 제품군이나 테마에 맞는 이모지를 반복 사용해 시각적 연상 효과를 만드는 것이 좋습니다. 단, 고객층과 채널 특성에 맞춰 과용을 피하세요.</p>' +
-                  '<p>관련 자료: <a href="https://pdnote.com/emoji_sense" target="_blank" rel="noopener">상황별 감정이모지</a></p>'
-        }
-    };
-
-    // 모달 요소 생성하여 바디 끝에 삽입
-    const modalOverlay = document.createElement('div');
-    modalOverlay.className = 'modal-overlay';
-    modalOverlay.id = 'modal-overlay';
-    modalOverlay.setAttribute('aria-hidden', 'true');
-    modalOverlay.innerHTML = `
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div class="modal-header">
-                <h3 id="modal-title" class="modal-title"></h3>
-                <button class="modal-close" id="modal-close" aria-label="닫기">✕</button>
-            </div>
-            <div class="modal-body" id="modal-body"></div>
-        </div>
-    `;
-    document.body.appendChild(modalOverlay);
-
-    const modalTitleEl = document.getElementById('modal-title');
-    const modalBodyEl = document.getElementById('modal-body');
-    const modalCloseBtn = document.getElementById('modal-close');
-
-    function openModal(name){
-        const data = modalContents[name];
-        if (!data) return;
-        modalTitleEl.textContent = data.title;
-        modalBodyEl.innerHTML = data.body;
-        modalOverlay.classList.add('active');
-        modalOverlay.setAttribute('aria-hidden', 'false');
-        modalCloseBtn.focus();
-    }
-
-    function closeModal(){
-        modalOverlay.classList.remove('active');
-        modalOverlay.setAttribute('aria-hidden', 'true');
-    }
-
-    modalCloseBtn.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', function(e){ if (e.target === modalOverlay) closeModal(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
-
-    function activate(id){
-        panels.forEach(p => p.classList.toggle('active', p.id === id));
-        tabBtns.forEach(b => b.setAttribute('aria-selected', b.dataset.target === id));
-    }
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function(e){
-            const target = this.dataset.target;
-            if (target === 'categories'){
-                // 카테고리 탭: 기존 패널 토글/활성화
-                if (window.matchMedia('(max-width:768px)').matches) {
-                    const panel = document.getElementById(target);
-                    const isActive = panel.classList.contains('active');
-                    panel.classList.toggle('active', !isActive);
-                    this.setAttribute('aria-selected', String(!isActive));
-                } else {
-                    activate(target);
-                    const panel = document.getElementById(target);
-                    if (panel) panel.scrollIntoView({behavior: 'smooth', block: 'start'});
-                }
-            } else {
-                // 나머지 메뉴는 모달로 표시
-                openModal(target);
-            }
-        });
-    });
-
-    // 카테고리 내부 링크: 부드러운 스크롤
-    document.querySelectorAll('.category-links a[data-scroll]').forEach(a => {
-        a.addEventListener('click', function(e){
-            e.preventDefault();
-            const sel = this.dataset.scroll;
-            const el = document.querySelector(sel);
-            if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-    });
-
-    // 초기 활성화
-    if (!document.querySelector('.tab-panel.active')){
-        const first = document.querySelector('.tab-panel');
-        if (first) first.classList.add('active');
-        const firstBtn = document.querySelector('.tab-btn');
-        if (firstBtn) firstBtn.setAttribute('aria-selected','true');
-    }
-});
 </script>
 
 </body>

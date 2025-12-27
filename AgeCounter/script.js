@@ -82,7 +82,7 @@ function calculateAge() {
   <div class="result-header">
       <h3>오늘 날짜: ${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일</h3>
   </div>
-  <div class="age-result-box">
+    <div class="age-result-box">
     <table class="age-result-table">
         <tr>
             <th>세는 나이 (한국식) <span class="info-icon" data-info="한국에서 전통적으로 사용되던 나이 계산법으로, 태어난 해부터 1살로 시작하여 새해(양력 1월 1일)가 될 때마다 1살씩 추가됩니다.">?</span></th>
@@ -107,6 +107,7 @@ function calculateAge() {
         </tr>` : ''}
     </table>
   </div>
+  <button id="benefitInfoBtn" class="info-btn">📢 나이별 정부 혜택 자세히 보기</button>
 `;
 
     // 툴팁 이벤트 리스너 추가
@@ -116,6 +117,15 @@ function calculateAge() {
         });
     });
 
+    // 혜택 모달 열기 리스너 추가
+    document.getElementById('benefitInfoBtn').addEventListener('click', function() {
+        const modal = document.getElementById('benefitsModal');
+        if (modal) {
+            modal.style.display = 'block';
+            // 등장 애니메이션 재실행을 위해 클래스 토글 등을 고려할 수 있으나 CSS animation이 이미 적용됨
+        }
+    });
+
     resultDiv.style.animation = 'fadeIn 0.5s ease-out';
     resultDiv.addEventListener('animationend', () => {
         resultDiv.style.animation = '';
@@ -123,6 +133,24 @@ function calculateAge() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 모달 닫기 관련 로직
+    const modal = document.getElementById('benefitsModal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+    }
+
+    if (modal) {
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+
     const birthdateInput = document.getElementById('birthdate');
     const calculateButton = document.getElementById('calculateBtn'); 
     

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3640401342059096"
+        crossorigin="anonymous"></script>
+
+    <title>MBTI 유형 알아보기 (문항 선택)</title>
+    <!-- SEO & 소셜 미디어 공유 태그 -->
+    <meta name="description" content="원하는 검사 길이를 선택하여 당신의 MBTI 유형을 알아보세요! 지금 바로 시작해보세요.">
+    <meta name="keywords" content="MBTI, MBTI 테스트, 성격유형검사, 심리테스트, MBTI 정식, MBTI 약식검사">
+    <meta property="og:title" content="MBTI 유형 알아보기 (문항 선택)">
+    <meta property="og:description" content="원하는 검사 길이를 선택하여 당신의 MBTI 유형을 알아보세요!">
+    <meta property="og:image"
+        content="https://pdnote.com/wp-content/uploads/2025/10/ChatGPT-Image-2025년-10월-26일-오후-11_14_43.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/mytools/MBTI_quick/MBTI_style.css">
+    <style>
+        .toggle-btn {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .result-breakdown {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .breakdown-item {
+            margin-bottom: 12px;
+        }
+
+        .breakdown-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .breakdown-bar-bg {
+            background: #eee;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .breakdown-bar-fill {
+            height: 100%;
+        }
+
+        .bar-left {
+            background-color: #4facfe;
+        }
+
+        /* E, S, T, J color */
+        .bar-right {
+            background-color: #00f2fe;
+        }
+
+        /* I, N, F, P color */
+    </style>
+</head>
+
+<body>
+    <div id="app-wrapper">
+        <div class="container">
+            <!-- 메인 화면 -->
+            <div id="main-screen" class="screen active">
+                <header class="header">
+                    <h1><i class="fas fa-brain"></i> 빠른 MBTI 유형 검사</h1>
+                    <p class="subtitle"> 나의 MBTI 성격 유형을 빠르게 찾아보세요!</p>
+                </header>
+
+                <div class="intro-content">
+                    <div class="intro-image">
+                        <img src="https://pdnote.com/wp-content/uploads/2025/10/ChatGPT-Image-2025년-10월-26일-오후-11_14_43.png"
+                            alt="빠른 MBTI 유형 검사 대표 이미지">
+                    </div>
+                    <div class="selector-title">
+                        <i class="fas fa-list-ol"></i> 문항 수 선택
+                    </div>
+                    <div class="question-count-selector">
+                        <input type="radio" id="count8" name="questionCount" value="8">
+                        <label for="count8">8문항</label>
+
+                        <input type="radio" id="count16" name="questionCount" value="16" checked>
+                        <label for="count16">16문항</label>
+
+                        <input type="radio" id="count32" name="questionCount" value="32">
+                        <label for="count32">32문항</label>
+
+                        <input type="radio" id="count80" name="questionCount" value="80" style="display:none;">
+                    </div>
+
+                    <button class="start-btn" onclick="startTest()">
+                        <i class="fas fa-play"></i>
+                        테스트 시작하기
+                    </button>
+
+                    <button class="start-btn full-test-btn" onclick="startFullTest()"
+                        style="margin-top: 10px; background: linear-gradient(135deg, #575451 0%, #8a827e 100%);">
+                        <i class="fas fa-star"></i>
+                        제대로 평가해 보기(80문항)
+                    </button>
+                </div>
+            </div>
+
+            <!-- 테스트 화면 -->
+            <div id="test-screen" class="screen">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">1/16</span>
+                </div>
+
+                <div class="question-container">
+                    <div class="question-number" id="question-number">Q1.</div>
+                    <h2 class="question-text" id="question-text"></h2>
+
+                    <div class="options-container" id="options-container"></div>
+                </div>
+            </div>
+
+            <!-- 결과 화면 -->
+            <div id="result-screen" class="screen">
+                <div class="result-container">
+                    <div class="result-emoji" id="result-emoji"></div>
+                    <h2 class="result-title" id="result-title"></h2>
+                    <p class="result-subtitle" id="result-subtitle"></p>
+                    <div class="result-description" id="result-description"></div>
+
+                    <button id="toggle-breakdown-btn" class="toggle-btn" onclick="toggleBreakdown()">
+                        <i class="fas fa-chart-bar"></i> 성향 강도 보기
+                    </button>
+
+                    <div id="result-breakdown" class="result-breakdown" style="display: none;">
+                        <!-- Breakdown bars will be inserted here by JS -->
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="#" id="details-btn" class="details-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-book-open"></i> 더 자세히보기
+                        </a>
+                        <button class="retry-btn" onclick="restartTest()">
+                            <i class="fas fa-redo"></i> 다시 테스트하기
+                        </button>
+                        <button class="share-btn" onclick="shareResult()">
+                            <i class="fas fa-share"></i> 결과 공유하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="footer">
+                © 2025 MBTI 유형 검사 | 모든 권리 보유
+            </div>
+        </div>
+    </div>
+
+    <script src="/mytools/MBTI_quick/MBTI_script.js"></script>
+</body>
+
+</html>
