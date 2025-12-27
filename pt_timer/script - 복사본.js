@@ -24,7 +24,6 @@ const personalizedTimeSectionEl = document.getElementById('personalizedTimeSecti
 const userCpmBadgeEl = document.getElementById('userCpmBadge');
 const estimatedTimePersonalizedEl = document.getElementById('estimatedTimePersonalized');
 const openModalButton = document.getElementById('openModalButton');
-const openTipsModalButton = document.getElementById('openTipsModalButton');
 const currentYearEl = document.getElementById('currentYear');
 
 // Modal DOM Elements
@@ -37,11 +36,6 @@ const sampleCharCountNoSpaceEl = document.getElementById('sampleCharCountNoSpace
 const timerDisplayEl = document.getElementById('timerDisplay');
 const startButton = document.getElementById('startButton');
 const endButton = document.getElementById('endButton');
-
-// Tips Modal DOM Elements
-const tipsModal = document.getElementById('tipsModal');
-const closeTipsModalButton = document.getElementById('closeTipsModalButton');
-const closeTipsModalFooterButton = document.getElementById('closeTipsModalFooterButton');
 
 // Utility Functions
 const analyzeScriptContent = (scriptText) => {
@@ -105,14 +99,6 @@ const updateTimerDisplay = () => {
 };
 
 // Modal Logic
-const openTipsModal = () => {
-  tipsModal.classList.remove('hidden');
-};
-
-const closeTipsModal = () => {
-  tipsModal.classList.add('hidden');
-};
-
 const openModal = () => {
   sampleScript = DEFAULT_SAMPLE_SCRIPT_FOR_RATE_CALCULATION;
   sampleScriptTextarea.value = sampleScript;
@@ -146,7 +132,7 @@ const startTimer = () => {
   timerStartTime = Date.now();
   elapsedMs = 0;
   updateTimerDisplay();
-
+  
   sampleScriptTextarea.disabled = true;
   startButton.classList.add('hidden');
   endButton.classList.remove('hidden');
@@ -176,11 +162,11 @@ const stopTimerAndCalculate = () => {
   if (finalElapsedSeconds > 0 && currentSampleAnalysis.charCountNoSpace > 0) {
     const cpm = Math.round((currentSampleAnalysis.charCountNoSpace / finalElapsedSeconds) * 60);
     if (cpm > 0) {
-      userCPM = cpm;
-      updateMainScriptAnalysisUI(); // Recalculate main script time with new CPM
-      closeModal();
+        userCPM = cpm;
+        updateMainScriptAnalysisUI(); // Recalculate main script time with new CPM
+        closeModal();
     } else {
-      alert("유효한 말하기 속도를 측정하지 못했습니다. (CPM이 0 이하) 다시 시도해주세요.");
+        alert("유효한 말하기 속도를 측정하지 못했습니다. (CPM이 0 이하) 다시 시도해주세요.");
     }
   } else if (currentSampleAnalysis.charCountNoSpace === 0) {
     alert("측정할 대본 내용이 없습니다.");
@@ -191,17 +177,6 @@ const stopTimerAndCalculate = () => {
 
 
 // Event Listeners
-if (openTipsModalButton) openTipsModalButton.addEventListener('click', openTipsModal);
-if (closeTipsModalButton) closeTipsModalButton.addEventListener('click', closeTipsModal);
-if (closeTipsModalFooterButton) closeTipsModalFooterButton.addEventListener('click', closeTipsModal);
-if (tipsModal) {
-  tipsModal.addEventListener('click', (e) => {
-    if (e.target === tipsModal) {
-      closeTipsModal();
-    }
-  });
-}
-
 mainScriptTextarea.addEventListener('input', (e) => {
   mainScript = e.target.value;
   updateMainScriptAnalysisUI();
