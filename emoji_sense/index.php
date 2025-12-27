@@ -23,13 +23,13 @@
     <meta name="twitter:image" content="https://yourdomain.com/thumbnail.jpg" />
 
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://9099ms.github.io/tools9/emoji_sense/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <!-- CSS 가져오기 -->
     <!-- CSS 가져오기 (Local styles linked above at line 25) -->
-    <!-- <link rel="stylesheet" href="https://9099ms.github.io/tools9/emoji_sense/style.css"> -->
+    <link rel="stylesheet" href="https://9099ms.github.io/tools9/emoji_sense/style.css">
 
     <!-- 구글 태그 (</head> 태그 전에 삽입) -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/mytools/_template/google.php'; ?>
@@ -310,7 +310,7 @@
     </div>
 
     <!-- JavaScript 가져오기 -->
-    <script src="https://9099ms.github.io/tools9/emoji_sense/script.js"></script> 
+    <script src="https://9099ms.github.io/tools9/emoji_sense/script.js"></script>
 
 </body>
 
